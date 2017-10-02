@@ -61,6 +61,4 @@ class Quest(Resource):
       if item:
          return item.json()
       return {'message': 'Question no found'}, 404
-#   ### Return question by nr   
-#   def get(self):
-#      return {'categorys': list(map(lambda x: x.json(), CatModel.query.all()))}
+

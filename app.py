@@ -14,6 +14,9 @@ api = Api(app)
 def create_tables():
 	db.create_all()
 
+class Ping(Resource):
+   def get(self):
+    return {'message': 'Pong'}
 
 api.add_resource(NewQuest, '/newquest')
 api.add_resource(Quest, '/quest/<int:nr>')
@@ -22,6 +25,8 @@ api.add_resource(CatList, '/catlist')
 api.add_resource(NewGame, '/newgame')
 api.add_resource(EndGame, '/endgame')
 api.add_resource(Scores, '/scores')
+api.add_resource(Ping, '/ping')
+
 
 
 if __name__ == '__main__':
