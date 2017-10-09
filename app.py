@@ -7,7 +7,8 @@ from quest import NewQuest, Quest
 from game import NewGame, EndGame, Scores
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://' + login.dbuser['username'] + ':' + login.dbuser['password'] + login.dbuser['database']
+app.config['SQLALCHEMY_DATABASE_URI'] = login.mysql['uri']
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://' + login.dbuser['username'] + ':' + login.dbuser['password'] + login.dbuser['database']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 api = Api(app)
 @app.before_first_request
